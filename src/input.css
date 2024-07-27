@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hamburger Menu */
+.hamburger-menu {
+  @apply cursor-pointer;
+}
+.hamburger-bar {
+  @apply rounded-full bg-white block my-1 transition duration-300 ease-in-out;
+}
+.hamburger-bar.barClose:nth-child(1) {
+  transform: rotate(45deg) translate(0, 7px);
+}
+.hamburger-bar.barClose:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-bar.barClose:nth-child(3) {
+  transform: rotate(-45deg) translate(2px, -11px);
+}
+
+/* Links */
+.nav-link {
+  @apply after:content-[''] after:block after:border-white after:border-solid after:rounded-full after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-all after:duration-300 after:ease-in-out block tracking-wider transition-all duration-300 ease-in-out text-sm lg:text-base uppercase;
+}
+
+.btn-primary {
+  @apply inline-block w-max px-4 py-2 rounded-lg bg-teal-600 tracking-widest text-white hover:bg-teal-500 active:scale-95 transition-all duration-300 ease-in-out;
+}
+
+.card-beans {
+  @apply flex flex-col items-center gap-2 p-4;
+}
