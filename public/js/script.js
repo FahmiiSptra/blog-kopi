@@ -30,3 +30,20 @@ document.addEventListener('click', (e) => {
     });
   }
 });
+
+// ketika tombol lihat penjelasan diklik maka akan menampilkan box modal
+const btnExplainBeans = document.querySelectorAll('.btn__explain');
+const modal = document.querySelectorAll('.modal__beans');
+const closeModal = document.querySelector('.fa-close');
+
+btnExplainBeans.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-content');
+    const modalId = document.getElementById(id);
+    modalId.classList.toggle('hidden');
+  });
+});
+
+function closeModal() {
+  modal.classList.toggle('hidden');
+}

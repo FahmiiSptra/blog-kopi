@@ -22,10 +22,10 @@
   <body class="text-xs">
     <!-- Header Section -->
     <header
-      class="fixed top-0 left-0 right-0 flex justify-between items-center bg-slate-800 text-white py-4 px-6 z-50 md:px-8 md:py-4 xl:px-12"
+      class="fixed top-0 left-0 right-0 flex justify-between items-center bg-slate-800 text-white py-3 px-6 z-50 md:px-8 md:py-4 xl:px-12"
     >
       <h3
-        class="text-xl md:text-xl lg:text-2xl xl:text-3xl font-title tracking-widest font-semibold"
+        class="text-2xl md:text-xl lg:text-2xl xl:text-3xl font-title tracking-widest font-semibold"
       >
         COF<span class="text-amber-500">FEE</span>
       </h3>
@@ -67,15 +67,15 @@
       </nav>
 
       <div class="sm:hidden cursor-pointer" id="hamburgerMenu">
-        <span class="hamburger-bar w-[25px] h-[3px]"></span>
-        <span class="hamburger-bar w-[25px] h-[3px]"></span>
-        <span class="hamburger-bar w-[25px] h-[3px]"></span>
+        <span class="hamburger-bar w-[25px] h-[2px]"></span>
+        <span class="hamburger-bar w-[25px] h-[2px]"></span>
+        <span class="hamburger-bar w-[25px] h-[2px]"></span>
       </div>
     </header>
     <!-- Header Section -->
 
     <!-- Hero Section -->
-    <section id="home" class="pt-16 pb-14 md:py-20 lg:py-24">
+    <section id="home" class="py-[72px] md:py-20 lg:py-24">
       <div
         class="container mx-auto flex flex-col gap-6 md:flex-row md:justify-between md:items-center md:gap-10 lg:justify-between lg:items-center lg:flex-row lg:gap-12 xl:gap-8 xl:px-20 2xl:px-36"
       >
@@ -83,13 +83,13 @@
           class="text-center flex flex-col gap-2 md:w-1/2 lg:w1/2 xl:gap-6 2xl:gap-4"
         >
           <h2
-            class="text-3xl font-bold italic font-serif leading-none lg:text-4xl xl:text-5xl 2xl:leading-tight"
+            class="text-3xl font-medium font-title tracking-wide leading-none lg:text-4xl xl:text-5xl 2xl:leading-tight"
           >
             Selamat Datang di
             <span class="font-bold text-amber-800">Dunia Kopi</span>
           </h2>
           <p
-            class="tracking-wider text-lg italic font-medium leading-tight lg:text-xl xl:text-3xl font-serif"
+            class="tracking-wider text-lg font-medium leading-tight lg:text-xl xl:text-3xl font-subtitle"
           >
             Eksplorasi dan Nikmati Beragam Kopi dari Seluruh Dunia
           </p>
@@ -104,13 +104,13 @@
     <!-- Hero Section -->
 
     <!-- Beans Coffee Section -->
-    <section id="beans" class="py-14 md:py-16 lg:py-20 bg-slate-100">
+    <section id="beans" class="py-16 md:py-16 lg:py-20 bg-slate-100">
       <div class="container mx-auto xl:px-20 2xl:px-36">
-        <h3 class="text-3xl lg:text-4xl font-serif text-center">
+        <h3 class="text-3xl lg:text-4xl font-title font-medium text-center">
           Jenis jenis Kopi
         </h3>
         <p
-          class="text-center tracking-wider text-base italic mb-4 lg:mb-8 lg:text-lg xl:text-xl xl:pt-[6px]"
+          class="text-center tracking-wider text-base font-subtitle mb-4 lg:mb-8 lg:text-lg xl:text-xl xl:pt-[6px]"
         >
           Cari tahu tentang jenis-jenis kopi yang ada di dunia ini
         </p>
@@ -131,7 +131,31 @@
               <div class="text-lg lg:text-xl font-serif tracking-wider">
                 Aceh Gayo
               </div>
-              <button class="btn-primary text-xs">Lihat Penjelasan</button>
+              <button
+                class="btn__explain btn-primary text-xs"
+                data-content="gayo"
+              >
+                Lihat Penjelasan
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="shadow-md rounded-md xl:shadow-xl xl:rounded-xl xl:hover:shadow-2xl overflow-hidden bg-white transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1"
+          >
+            <img
+              src="public/img/beans/aceh-gayo.jpg"
+              alt="Gambar 1"
+              class="h-40 lg:h-56 object-cover object-center w-full"
+            />
+
+            <div class="card-beans">
+              <div class="text-lg lg:text-xl font-serif tracking-wider">
+                Arabika
+              </div>
+              <button class="btn-primary text-xs" data-content="arabica">
+                Lihat Penjelasan
+              </button>
             </div>
           </div>
 
@@ -168,23 +192,54 @@
               <button class="btn-primary text-xs">Lihat Penjelasan</button>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div
-            class="shadow-md rounded-md xl:shadow-xl xl:rounded-xl xl:hover:shadow-2xl overflow-hidden bg-white transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1"
-          >
-            <img
-              src="public/img/beans/aceh-gayo.jpg"
-              alt="Gambar 1"
-              class="h-40 lg:h-56 object-cover object-center w-full"
-            />
+      <!-- CONTENT FOR EXPLAIN BEANS COFFEE -->
+      <!-- modal / popup -->
+      <div
+        id="gayo"
+        class="modal__beans hidden bg-slate-800/50 fixed z-[999] top-0 left-0 w-full h-full text-white p-16"
+      >
+        <div
+          class="bg-red-500 relative top-1/2 -translate-y-1/2 px-4 pb-4 pt-8"
+        >
+          <i
+            class="fas fa-close absolute right-4 top-4 text-lg"
+            onclick="closeModal()"
+          ></i>
+          <h3 class="text-2xl font-subtitle text-center tracking-wide">
+            Aceh Gayo
+          </h3>
+          <p class="font-text text-sm tracking-wider py-2">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+            accusamus ex sit magnam magni suscipit vitae facere quibusdam vel,
+            totam quos rerum incidunt sint ab! Saepe molestias rerum quos
+            inventore?
+          </p>
+        </div>
+      </div>
 
-            <div class="card-beans">
-              <div class="text-lg lg:text-xl font-serif tracking-wider">
-                Aceh Gayo
-              </div>
-              <button class="btn-primary text-xs">Lihat Penjelasan</button>
-            </div>
-          </div>
+      <div
+        id="arabica"
+        class="modal__beans hidden bg-slate-800/50 fixed z-[999] top-0 left-0 w-full h-full text-white p-16"
+      >
+        <div
+          class="bg-red-500 relative top-1/2 -translate-y-1/2 px-4 pb-4 pt-8"
+        >
+          <i
+            class="fas fa-close absolute right-4 top-4 text-lg"
+            onclick="closeModal()"
+          ></i>
+          <h3 class="text-2xl font-subtitle text-center tracking-wide">
+            Aceh Gayo
+          </h3>
+          <p class="font-text text-sm tracking-wider py-2">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+            accusamus ex sit magnam magni suscipit vitae facere quibusdam vel,
+            totam quos rerum incidunt sint ab! Saepe molestias rerum quos
+            inventore?
+          </p>
         </div>
       </div>
     </section>
